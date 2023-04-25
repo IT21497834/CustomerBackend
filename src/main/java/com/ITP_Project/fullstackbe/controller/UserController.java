@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin("http://localhost:3000")
@@ -21,6 +22,10 @@ public class UserController {
     @PostMapping("/user")
     User newUser(@RequestBody User newUser)
     {
+       Optional<User> userOptional =  userRepository.findByEmail(newUser.getEmail());
+       if(userOptional.isPresent()){
+           return  null;
+       }
         return userRepository.save(newUser);
     }
 
