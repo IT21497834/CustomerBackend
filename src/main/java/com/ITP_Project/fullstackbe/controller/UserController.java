@@ -6,14 +6,11 @@ import com.ITP_Project.fullstackbe.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 @CrossOrigin("http://localhost:3000")
-
-
 public class UserController {
 
     @Autowired
